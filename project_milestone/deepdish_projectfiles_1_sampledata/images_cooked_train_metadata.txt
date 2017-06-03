@@ -1,0 +1,7 @@
+0,images_cooked_train/cats/cats_id1.jpg
+0,images_cooked_train/cats/cats_id2.jpg
+1,images_cooked_train/dogs/dogs_id1.jpg
+2,images_cooked_train/giraffe/giraffe_id1.jpg
+2,images_cooked_train/giraffe/giraffe_id2.jpg
+2,images_cooked_train/giraffe/giraffe_id3.jpg
+2,images_cooked_train/giraffe/giraffe_id4.jpg

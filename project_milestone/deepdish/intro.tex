@@ -1,0 +1,10 @@
+\section{Introduction}
+
+%Explain the problem and why it is important. Discuss your motivation for pursuing this problem. Give some background if necessary. Clearly state what the input and output is. Be very explicit: "The input to our algorithm is a {satellite image, YouTube video, patient age, 3D video, etc.}. We then use a {CNN, LSTM, GAN, etc.} to output a predicted {age, segmentation, cancer type, restaurant, activity, etc.}." This is very important since different teams have different inputs/outputs spanning different application domains. Being explicit about this makes it easier for readers.
+
+This project aims to use deep learning on images of food dishes. Currently there are model zoos e.g. Caffe Model Zoo~\cite{caffemodelzoo} where people submit deep learning models and data from a wide range of application domains. We want to apply the principles of deep convolutional networks on images of food. Food images are unique: there are multiple cuisines from around the world, each food item has a unique color, size, shape and texture, and food items can be combined in several ways to prepare a meal. Being able to use artificial intelligence (and Deep Learning in particular) on food images has the potential to revolutionize the field of dining, promote healthy eating, prevent food waste etc.
+
+To that effect, we are working on two problems. In the first problem, we want to classify food dishes using Convolutional Neural Networks. We formulate this problem as a standard classification task with one class per image, i.e. given an image of a food dish, we want to predict what dish it is. For the second problem, we want to detect the different food items in the image, i.e. given an image of a dish with chicken wings and celery (see Figure~\ref{fig:chickenwingswithcelery}), we want to detect and tag each item separately. We formulate the second problem as a CNN based detection task.  
+
+
+%-------------------------------------------------------------------------

@@ -1,0 +1,1 @@
+0,images_cooked_test/cats/cats_id3.jpg

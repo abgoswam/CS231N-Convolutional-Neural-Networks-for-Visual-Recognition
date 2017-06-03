@@ -1,0 +1,1 @@
+1,images_cooked_val/dogs/dogs_id2.jpg
