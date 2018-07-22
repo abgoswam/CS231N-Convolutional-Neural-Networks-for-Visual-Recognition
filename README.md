@@ -1,4 +1,4 @@
-# cs231n_agrepo
+# CS231N
 
 This repo is to consolidate material that we covered as part of Stanford University's course [CS231N : Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/index.html) . I took this course in Spring 2017.
 
