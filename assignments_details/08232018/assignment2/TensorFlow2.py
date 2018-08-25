@@ -59,7 +59,7 @@ def get_batch(x, y, batch_size):
 
 # clear old variables
 tf.reset_default_graph()
-X = tf.placeholder(tf.float32, [None, 32, 32, 3])
+X = tf.placeholder(tf.float32, [None, 32, 32, 3], name="myInput")
 y = tf.placeholder(tf.int64, [None])
 
 # Placeholders for batchnorm and dropout
@@ -74,9 +74,9 @@ b1 = tf.get_variable("b1", shape=[10])
 
 # define our graph (e.g. two_layer_convnet)
 a1 = tf.nn.conv2d(X, Wconv1, strides=[1,2,2,1], padding='VALID') + bconv1
-h1 = tf.nn.relu(a1)
+h1 = tf.nn.relu(a1, name="myOutputPre")
 h1_flat = tf.reshape(h1,[-1,5408])
-y_out = tf.matmul(h1_flat,W1) + b1
+y_out = tf.matmul(h1_flat,W1,name="myOutput") + b1
 
 # define our loss
 total_loss = tf.losses.hinge_loss(tf.one_hot(y,10),logits=y_out)
@@ -113,8 +113,16 @@ with tf.Session() as sess:
 
     print('test accuracy %g' % accuracy.eval(feed_dict={X: X_val, y: y_val, keep_prob: 1.0, is_training:False}))
     # Save the variables to disk.
-    save_path = saver.save(sess, "cifar_convnet_model/model.ckpt")
-    print("Model saved in path: %s" % save_path)
+    # save_path = saver.save(sess, "cifar_convnet_model/model.ckpt")
+    # print("Model saved in path: %s" % save_path)
+    
+    export_dir = "cifar_save"
+    tf.saved_model.simple_save(sess,
+            export_dir,
+            inputs={"myInput": X},
+            outputs={"myOutput": y_out})
+
+
 
 # Run this cell to visualize training loss and train / val accuracy
 
