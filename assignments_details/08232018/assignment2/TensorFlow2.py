@@ -112,11 +112,12 @@ with tf.Session() as sess:
         loss_history.append(loss_i)
 
     print('test accuracy %g' % accuracy.eval(feed_dict={X: X_val, y: y_val, keep_prob: 1.0, is_training:False}))
-    # Save the variables to disk.
-    # save_path = saver.save(sess, "cifar_convnet_model/model.ckpt")
-    # print("Model saved in path: %s" % save_path)
     
-    export_dir = "cifar_save"
+    # Save the variables to disk.
+    save_path = saver.save(sess, "cifar_save/model.ckpt")
+    print("Model saved in path: %s" % save_path)
+    
+    export_dir = "cifar_save2"
     tf.saved_model.simple_save(sess,
             export_dir,
             inputs={"myInput": X},

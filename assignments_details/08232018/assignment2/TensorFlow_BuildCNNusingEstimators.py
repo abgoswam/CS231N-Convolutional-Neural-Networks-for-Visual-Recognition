@@ -5,8 +5,6 @@ Created on Thu Aug 23 23:05:56 2018
 @author: agoswami
 """
 
-import tensorflow as tf
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
