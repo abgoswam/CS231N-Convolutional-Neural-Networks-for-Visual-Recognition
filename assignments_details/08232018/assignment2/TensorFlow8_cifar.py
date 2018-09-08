@@ -114,7 +114,7 @@ with tf.Session() as sess:
     print('test accuracy %g' % accuracy.eval(feed_dict={X: X_val, y: y_val, keep_prob: 1.0, is_training:False}))
     
     # Save the variables to disk.
-    save_path = saver.save(sess, "cifar_save8/model.ckpt")
+    save_path = saver.save(sess, "cifar_save9/model.ckpt")
     print("Model saved in path: %s" % save_path)
 
 

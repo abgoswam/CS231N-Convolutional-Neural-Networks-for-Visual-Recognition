@@ -79,7 +79,7 @@ def load_graph(frozen_graph_filename):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--frozen_model_filename", default="cifar_save8/frozen_model.pb", type=str, help="Frozen model file to import")
+    parser.add_argument("--frozen_model_filename", default="cifar_save9/frozen_model.pb", type=str, help="Frozen model file to import")
     args = parser.parse_args()
 
     graph = load_graph(args.frozen_model_filename)
